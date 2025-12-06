@@ -1,5 +1,4 @@
 # Create a list to hold the contents of the input file
-from operator import truediv
 
 myList = []
 
@@ -60,5 +59,6 @@ def sumInvalidIDs(invalidIDs):
     for id in invalidIDs:
         sum += id
     return sum
+
 
 partOne(splitList)
