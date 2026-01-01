@@ -47,7 +47,7 @@ def find_way_out_through_dac_fft(device_id, all_devices, dac, fft):
             connected_devices = device[1]
     # loop through the connected devices
     for connected_device in connected_devices:
-        # also need to check if fft and dac are in a list of already visited devices
+        # also need to check if fft and dac have already been visited
         if connected_device == "out" and dac and fft:
             count += 1
         else:
@@ -62,4 +62,5 @@ all_devices = create_devices(input_list)
 # 3. find the ways out
 #print("Part 1 answer:", find_way_out("you", all_devices))
 # 4. find the ways out through fft and dac
+
 print("Part 2 answer:", find_way_out_through_dac_fft("svr", all_devices, False, False))
