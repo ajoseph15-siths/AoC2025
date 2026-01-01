@@ -17,6 +17,8 @@ def create_devices(input_list):
        all_devices.append((device_id, connected_devices))
    return all_devices
 # 3. Find a way out, given a "starting" device
+# this doesn't actually work... i had to run it and copy and paste the output
+# into notepad++ and then count how many times it printed "found a way out"
 def find_way_out(device_id, all_devices, count):
     # find connected devices
     connected_devices = []
@@ -32,17 +34,10 @@ def find_way_out(device_id, all_devices, count):
             find_way_out(connected_device, all_devices, count)
     return count
 
-def count_ways_out():
-    count = 0
-    count += find_way_out("you",all_devices,0)
-    print("Final count =",count)
-
 # COMMANDS
 # 1. get info from input file
 input_list = get_file_data('input.txt')
 # 2. create devices from input file and add to a list
 all_devices = create_devices(input_list)
 # 3. find the ways out
-# this doesn't actually work... i had to run it and copy and paste the output
-# into notepad++ and then count how many times it printed "found a way out"
 print(find_way_out("you", all_devices,0))
