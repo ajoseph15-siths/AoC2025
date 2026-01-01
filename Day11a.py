@@ -17,7 +17,7 @@ def create_devices(input_list):
        all_devices.append((device_id, connected_devices))
    return all_devices
 # 3. Find a way out, given a "starting" device
-def find_way_out(device_id, all_devices, count):
+def find_way_out(device_id, all_devices):
     # find connected devices
     count = 0
     connected_devices = []
@@ -29,7 +29,7 @@ def find_way_out(device_id, all_devices, count):
         if connected_device == "out":
             count += 1
         else:
-            count += find_way_out(connected_device, all_devices, count)
+            count += find_way_out(connected_device, all_devices)
     return count
 
 # COMMANDS
@@ -38,4 +38,4 @@ input_list = get_file_data('input.txt')
 # 2. create devices from input file and add to a list
 all_devices = create_devices(input_list)
 # 3. find the ways out
-print("Part 1 answer:", find_way_out("you", all_devices,0))
+print("Part 1 answer:", find_way_out("you", all_devices))
